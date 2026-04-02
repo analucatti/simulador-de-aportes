@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function WalletImport({ onLoaded }: Props) {
-  const [url, setUrl] = useState('https://investidor10.com.br/wallet/my-wallet/1908516')
+  const [url, setUrl] = useState('https://investidor10.com.br/wallet/my-wallet/1123456')
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<{ type: StatusType; message: string }>({ type: null, message: '' })
 
@@ -43,7 +43,7 @@ export default function WalletImport({ onLoaded }: Props) {
             type="text"
             value={url}
             onChange={e => setUrl(e.target.value)}
-            placeholder="https://investidor10.com.br/wallet/my-wallet/1908516"
+            placeholder="https://investidor10.com.br/wallet/my-wallet/1123456"
           />
         </div>
         <button onClick={handleLoad} disabled={loading}>

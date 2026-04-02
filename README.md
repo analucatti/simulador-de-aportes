@@ -44,7 +44,7 @@ Acesse `http://localhost:5173`
 ### Passo a passo
 
 1. No Investidor10, deixe sua carteira **publica** temporariamente
-2. Cole o link da carteira (ex: `https://investidor10.com.br/wallet/my-wallet/<ID_DA_CARTEIRA>`)
+2. Cole o link da carteira (ex: `https://investidor10.com.br/wallet/my-wallet/1123456`)
 3. Clique em **Carregar Carteira**
 4. Ajuste os **percentuais ideais** de cada classe de ativo (devem somar 100%)
 5. Ajuste a **margem de tolerancia** se quiser (padrao: 15%)
