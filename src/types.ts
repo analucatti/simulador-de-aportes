@@ -34,4 +34,5 @@ export interface WalletApiTicker {
 
 export interface WalletApiResponse {
   tickers: WalletApiTicker[]
+  others_tickers: WalletApiTicker[]
 }

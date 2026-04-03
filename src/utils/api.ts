@@ -14,11 +14,13 @@ export async function fetchWallet(walletId: string): Promise<AssetClass[]> {
 
   const data: WalletApiResponse = await response.json()
 
-  if (!data.tickers || data.tickers.length === 0) {
+  const allTickers = [...(data.tickers || []), ...(data.others_tickers || [])]
+
+  if (allTickers.length === 0) {
     throw new Error('Nenhum ativo encontrado na carteira.')
   }
 
-  const assets: AssetClass[] = data.tickers.map(t => ({
+  const assets: AssetClass[] = allTickers.map(t => ({
     className: t.class,
     type: t.type,
     percent: t.percent,

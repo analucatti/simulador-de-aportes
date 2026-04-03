@@ -20,6 +20,7 @@ function getStatus(current: number, ideal: number, margin: number) {
 
 export default function AllocationTable({ portfolio, margin, onIdealChange, onMarginChange }: Props) {
   const totalIdeal = portfolio.reduce((s, a) => s + a.idealPercent, 0)
+  const totalCurrent = portfolio.reduce((s, a) => s + a.currentPercent, 0)
   const sumOk = Math.abs(totalIdeal - 100) <= 1
 
   return (
@@ -110,6 +111,9 @@ export default function AllocationTable({ portfolio, margin, onIdealChange, onMa
         </tbody>
       </table>
 
+      <div className="ideal-sum ideal-sum-ok" style={{ marginBottom: 4 }}>
+        Soma do valor atual: {formatPercent(totalCurrent)}
+      </div>
       <div className={`ideal-sum ${sumOk ? 'ideal-sum-ok' : 'ideal-sum-error'}`}>
         Soma dos ideais: {formatPercent(totalIdeal)}{!sumOk && ' (deve ser 100%)'}
       </div>
