@@ -42,6 +42,9 @@ export default defineConfig({
       },
     },
   ],
+  preview: {
+    allowedHosts: ['simulador-de-aportes.onrender.com'],
+  },
   server: {
     port: 5173,
   },
