@@ -3,7 +3,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   // Proxy para API do Investidor10
@@ -37,9 +37,9 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Servir arquivos estaticos
+  // Servir arquivos estaticos do build
   let filePath = req.url === '/' ? '/index.html' : req.url;
-  filePath = path.join(__dirname, filePath);
+  filePath = path.join(__dirname, 'dist', filePath);
 
   const ext = path.extname(filePath);
   const mimeTypes = {
