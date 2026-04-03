@@ -88,5 +88,5 @@ Este projeto usa uma licenca **CC BY-NC 4.0 com clausula de revenue sharing** pa
 - **Uso pessoal/educacional**: livre, desde que de os creditos
 - **Uso comercial**: requer acordo de revenue sharing (5% da receita) — veja o arquivo [LICENSE](LICENSE) para detalhes
 
-Autora: **Ana Lucatti** (analucatti23@gmail.com)
+**Lucatti Tecnologia LTDA** (lucatti.tecnologia@gmail.com)
 Desenvolvido com **Claude Code** (Anthropic)
