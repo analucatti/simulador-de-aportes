@@ -63,7 +63,7 @@ export default function AllocationTable({ portfolio, margin, onIdealChange, onMa
 
             return (
               <tr key={i}>
-                <td>
+                <td data-label="">
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <div className="color-dot" style={{ background: color }} />
                     <strong>{asset.className}</strong>
@@ -72,8 +72,8 @@ export default function AllocationTable({ portfolio, margin, onIdealChange, onMa
                     </span>
                   </div>
                 </td>
-                <td className="text-right">{formatBRL(asset.equity)}</td>
-                <td className="text-right">
+                <td className="text-right" data-label="Valor Atual">{formatBRL(asset.equity)}</td>
+                <td className="text-right" data-label="% Atual">
                   <div className="bar-container">
                     <div className="bar-track">
                       <div
@@ -84,7 +84,7 @@ export default function AllocationTable({ portfolio, margin, onIdealChange, onMa
                     <span className="bar-label">{formatPercent(asset.currentPercent)}</span>
                   </div>
                 </td>
-                <td className="text-center">
+                <td className="text-center" data-label="% Ideal">
                   <div className="ideal-field">
                     <input
                       type="number"
@@ -97,12 +97,12 @@ export default function AllocationTable({ portfolio, margin, onIdealChange, onMa
                     <span style={{ color: 'var(--text-muted)' }}>%</span>
                   </div>
                 </td>
-                <td className="text-center">
+                <td className="text-center" data-label="Margem">
                   <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
                     {formatPercent(low)} - {formatPercent(high)}
                   </span>
                 </td>
-                <td className="text-center">
+                <td className="text-center" data-label="Status">
                   <span className={`badge ${status.cls}`}>{status.text}</span>
                 </td>
               </tr>

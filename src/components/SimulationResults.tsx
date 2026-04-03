@@ -96,7 +96,7 @@ export default function SimulationResults({ allocations, aporte, newTotal, curre
 
               return (
                 <tr key={i}>
-                  <td>
+                  <td data-label="">
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <div className="color-dot" style={{ background: color }} />
                       <strong>{a.className}</strong>
@@ -104,21 +104,22 @@ export default function SimulationResults({ allocations, aporte, newTotal, curre
                   </td>
                   <td
                     className="text-right"
+                    data-label="Aporte"
                     style={{ color: a.aporteValue > 0.01 ? 'var(--green)' : 'var(--text-muted)' }}
                   >
                     {a.aporteValue > 0.01 ? `+ ${formatBRL(a.aporteValue)}` : '-'}
                   </td>
-                  <td className="text-right">{formatBRL(a.newEquity)}</td>
-                  <td className="text-right">
+                  <td className="text-right" data-label="Valor Depois">{formatBRL(a.newEquity)}</td>
+                  <td className="text-right" data-label="% Antes">
                     <span style={{ color: 'var(--text-muted)' }}>{formatPercent(a.currentPercent)}</span>
                   </td>
-                  <td className="text-center">
+                  <td className="text-center" data-label="% Ideal">
                     <span style={{ color: 'var(--accent)' }}>{formatPercent(a.idealPercent)}</span>
                   </td>
-                  <td className="text-right">
+                  <td className="text-right" data-label="% Depois">
                     {arrow} <strong>{formatPercent(a.newPercent)}</strong>
                   </td>
-                  <td className="text-center">
+                  <td className="text-center" data-label="Status">
                     <span className={`badge ${statusCls}`}>{statusText}</span>
                   </td>
                 </tr>

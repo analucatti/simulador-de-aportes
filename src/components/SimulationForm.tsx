@@ -28,18 +28,18 @@ export default function SimulationForm({
   return (
     <div className="card">
       <div className="card-title">Simular Aporte</div>
+      <div className="field" style={{ marginBottom: 12 }}>
+        <label>Valor do aporte (R$)</label>
+        <input
+          type="text"
+          value={aporteInput}
+          onChange={e => handleInputChange(e.target.value)}
+          placeholder="1.000,00"
+        />
+      </div>
       <div className="input-group">
-        <div className="field" style={{ flex: 1, minWidth: 200 }}>
-          <label>Valor do aporte (R$)</label>
-          <input
-            type="text"
-            value={aporteInput}
-            onChange={e => handleInputChange(e.target.value)}
-            placeholder="1.000,00"
-          />
-        </div>
-        <button onClick={onSimulate}>Simular</button>
-        <button className="btn-secondary" onClick={onReset}>Limpar</button>
+        <button onClick={onSimulate} style={{ flex: 1 }}>Simular</button>
+        <button className="btn-secondary" onClick={onReset} style={{ flex: 1 }}>Limpar</button>
       </div>
       <ClassFilter
         portfolio={portfolio}

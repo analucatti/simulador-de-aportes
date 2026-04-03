@@ -100,6 +100,14 @@ export default function App() {
           )}
         </>
       )}
+      <footer className="site-footer">
+        <p>Lucatti Tecnologia LTDA — lucatti.tecnologia@gmail.com</p>
+        <p>
+          <a href="https://github.com/analucatti/simulador-de-aportes" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </p>
+      </footer>
     </div>
   )
 }

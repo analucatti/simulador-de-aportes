@@ -134,11 +134,80 @@ tbody tr:hover { background: rgba(108, 92, 231, 0.04); }
 
 .info-text { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
 
+.site-footer {
+  text-align: center;
+  padding: 24px 0;
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-footer a:hover { text-decoration: underline; }
+
 @media (max-width: 640px) {
-  body { padding: 12px; }
-  h1 { font-size: 1.4rem; }
+  body { padding: 10px; }
+  h1 { font-size: 1.3rem; }
+  .subtitle { margin-bottom: 20px; }
+  .card { padding: 16px; margin-bottom: 14px; }
   .input-group { flex-direction: column; }
   .field input { width: 100%; }
-  table { font-size: 0.82rem; }
-  thead th, tbody td { padding: 8px 6px; }
+  button { width: 100%; padding: 12px; }
+
+  .summary-grid { grid-template-columns: 1fr; gap: 8px; }
+
+  /* Tables become stacked cards on mobile */
+  table, thead, tbody, th, td, tr { display: block; }
+  thead { display: none; }
+
+  tbody tr {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+  }
+  tbody tr:hover { background: var(--surface2); }
+  tbody tr:last-child td { border-bottom: 1px solid var(--border); }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+
+  tbody td:last-child { border-bottom: none; }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+
+  tbody td .bar-container { justify-content: flex-end; }
+  tbody td .bar-track { display: none; }
+
+  .ideal-field { justify-content: flex-end; }
+
+  .suggestion-box { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .suggestion-box .amount { font-size: 1.3rem; }
+
+  .info-text { flex-direction: column !important; align-items: flex-start !important; }
+
+  .checkbox-pill { font-size: 0.8rem; padding: 5px 10px; }
 }

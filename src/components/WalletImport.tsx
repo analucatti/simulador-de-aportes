@@ -36,20 +36,18 @@ export default function WalletImport({ onLoaded }: Props) {
   return (
     <div className="card">
       <div className="card-title">Importar Carteira</div>
-      <div className="input-group">
-        <div className="field" style={{ flex: 1, minWidth: 250 }}>
-          <label>Link da carteira Investidor10</label>
-          <input
-            type="text"
-            value={url}
-            onChange={e => setUrl(e.target.value)}
-            placeholder="https://investidor10.com.br/wallet/public/1234567"
-          />
-        </div>
-        <button onClick={handleLoad} disabled={loading}>
-          Carregar Carteira
-        </button>
+      <div className="field" style={{ marginBottom: 12 }}>
+        <label>Link da carteira Investidor10</label>
+        <input
+          type="text"
+          value={url}
+          onChange={e => setUrl(e.target.value)}
+          placeholder="https://investidor10.com.br/wallet/public/1234567"
+        />
       </div>
+      <button onClick={handleLoad} disabled={loading} style={{ width: '100%' }}>
+        Carregar Carteira
+      </button>
       <StatusMessage type={status.type} message={status.message} />
     </div>
   )
