@@ -1,12 +1,12 @@
 import type { AssetClass, WalletApiResponse } from '../types'
 
 export function extractWalletId(url: string): string | null {
-  const match = url.match(/my-wallet\/(\d+)/)
+  const match = url.match(/wallet\/(?:my-wallet|public)\/(\d+)/)
   return match ? match[1] : null
 }
 
 export async function fetchWallet(walletId: string): Promise<AssetClass[]> {
-  const response = await fetch(`/api/summary/info/${walletId}`)
+  const response = await fetch(`/api/summary/info/${walletId}`, { cache: 'no-store' })
 
   if (!response.ok) {
     throw new Error(`Erro HTTP ${response.status}. A carteira esta publica?`)

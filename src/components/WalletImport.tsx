@@ -8,14 +8,14 @@ interface Props {
 }
 
 export default function WalletImport({ onLoaded }: Props) {
-  const [url, setUrl] = useState('https://investidor10.com.br/wallet/my-wallet/1123456')
+  const [url, setUrl] = useState('')
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<{ type: StatusType; message: string }>({ type: null, message: '' })
 
   const handleLoad = async () => {
     const walletId = extractWalletId(url)
     if (!walletId) {
-      setStatus({ type: 'error', message: 'URL invalida. Use o formato: https://investidor10.com.br/wallet/my-wallet/XXXXXX' })
+      setStatus({ type: 'error', message: 'URL invalida. Use o formato: https://investidor10.com.br/wallet/public/XXXXXX ou https://investidor10.com.br/wallet/my-wallet/XXXXXX' })
       return
     }
 
@@ -43,7 +43,7 @@ export default function WalletImport({ onLoaded }: Props) {
             type="text"
             value={url}
             onChange={e => setUrl(e.target.value)}
-            placeholder="https://investidor10.com.br/wallet/my-wallet/1123456"
+            placeholder="https://investidor10.com.br/wallet/public/1234567"
           />
         </div>
         <button onClick={handleLoad} disabled={loading}>

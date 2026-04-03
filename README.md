@@ -14,8 +14,8 @@ Simulador de aportes para rebalanceamento de carteira de investimentos. Importa 
 ## Tecnologias
 
 - React 18 + TypeScript
-- Vite
-- Node.js (proxy backend)
+- [Vite](https://vite.dev/) — bundler e dev server com hot reload e proxy integrado
+- Node.js v18+
 
 ## Como usar
 
@@ -32,19 +32,19 @@ npm install
 ### Executar
 
 ```bash
-# Terminal 1 — proxy backend (necessario para acessar a API do Investidor10)
-node server.js
-
-# Terminal 2 — frontend
 npm run dev
 ```
 
 Acesse `http://localhost:5173`
 
+> **Nota:** O Vite ja inclui um proxy embutido que redireciona as chamadas de API para o Investidor10 (configurado em `vite.config.ts`). Nao e necessario rodar nenhum servidor backend separado.
+
 ### Passo a passo
 
 1. No Investidor10, deixe sua carteira **publica** temporariamente
-2. Cole o link da carteira (ex: `https://investidor10.com.br/wallet/my-wallet/1123456`)
+2. Cole o link da carteira — aceita os dois formatos:
+   - `https://investidor10.com.br/wallet/public/1234567`
+   - `https://investidor10.com.br/wallet/my-wallet/1234567`
 3. Clique em **Carregar Carteira**
 4. Ajuste os **percentuais ideais** de cada classe de ativo (devem somar 100%)
 5. Ajuste a **margem de tolerancia** se quiser (padrao: 15%)
